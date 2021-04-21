@@ -1,0 +1,30 @@
+version: "3.9"
+
+services:
+  victim:
+    build: victim/
+    entrypoint: nginx
+    sysctls:
+      - net.ipv4.tcp_syncookies=0
+    networks:
+      - flood
+  attacker:
+    build: attackers/
+    tty: true
+    networks:
+      - flood
+
+  verifier:
+    build: attackers/
+    tty: true
+    networks:
+      - flood
+
+networks:
+  flood:
+    driver: bridge
+    ipam:
+      driver: default
+      config:
+        - subnet: 172.16.5.0/16
+          gateway: 172.16.5.254
