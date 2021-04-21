@@ -1,6 +1,6 @@
 # Grundlagen IT-Sicherheit - Practical Exercise 1 - SYN_flood
 
-In this small exercise you will perform a synflooding attack using a program written in C on our target and thus make the test site of Nginx unreachable for third parties. We will not deal with the exact implementation here. It is merely a matter of carrying out the attack in practice.
+In this small exercise you will perform a synflooding attack using a program written in `C` on our target and thus make the 404 response site of Nginx unreachable for third parties. We will not deal with the exact implementation here. It is merely a matter of carrying out the attack in practice.
 
 ## Preparation
 
@@ -73,11 +73,11 @@ Dest addr: 172.16.0.3:80
 _
 ```
 
-Now our destination server is flooded with TCP SYN requests.
+Now our target server is permanently flooded with TCP SYN requests.
 
 ### Validation
 
-If we now run curl again on our verifier, we should get no response.
+If we now run curl again in our verifier terminal, we should get no response.
 
 ```bash
 >>> curl -v victim

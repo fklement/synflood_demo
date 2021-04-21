@@ -1,8 +1,8 @@
 FROM alpine:edge
 
-ENTRYPOINT ["bash"]
+ENTRYPOINT ["sh"]
 LABEL maintainer "Felix Klement <fk@sec.uni-passau.de>"
 RUN echo 'http://dl-cdn.alpinelinux.org/alpine/edge/testing/' >> /etc/apk/repositories && \
-    apk add --no-cache -U --allow-untrusted iproute2 nginx bmon tcpdump curl bash hping3
+    apk add --no-cache -U --allow-untrusted nginx 
 
 RUN echo "daemon off;" >> /etc/nginx/nginx.conf

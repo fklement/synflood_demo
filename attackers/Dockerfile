@@ -1,6 +1,4 @@
 FROM alpine:edge
-# FROM elixir:1.12-alpine
-# FROM python:3.10-rc-alpine3.12
 
 ENTRYPOINT ["bash"]
 LABEL maintainer "Felix Klement <fk@sec.uni-passau.de>"
